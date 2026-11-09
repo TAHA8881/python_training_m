@@ -27,7 +27,7 @@ def main(page: ft.Page):
                 ft.Row([
                     ft.Text(movies[i]),
                     ft.Button(f"Удалить{i+1}", on_click = lambda e, idx = 1:
-                              dell_movie[idx])
+                              dell_movie(idx))
                 ])
             )
 
