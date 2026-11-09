@@ -26,7 +26,7 @@ def main(page: ft.Page):
     def show(e):
         result.value = f"Режим: {mode.value}, размер: {size.value:.0f}"
         
-    page.add(mode, ft.Button("Создать тест", on_click=show), result)
+    page.add(mode, size, ft.Button("Создать тест", on_click=show), result)
 
 if __name__ == "__main__":
     ft.run(main)
