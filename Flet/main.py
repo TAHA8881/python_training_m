@@ -4,14 +4,18 @@ import flet as ft
 def main(page: ft.Page):
     page.title = "Бейдж"
     page.padding = 24
-    
-    page.add(ft.Container(
+
+    heading = ft.Text("Каталог товаров",size=64, weight=ft.FontWeight.W_700)
+
+
+    card =ft.Container(
         width=1200,
         padding=20, margin=10, border_radius=16,
         bgcolor=ft.Colors.WHITE,
         shadow = ft.BoxShadow(
             blur_radius = 15,
-            color= ft.Colors.BLACK_12
+            color= ft.Colors.BLACK_12,
+
         ),
 
 #        tags=ft.Container(
@@ -27,9 +31,8 @@ def main(page: ft.Page):
 #        )
 
 
-
-        content=ft.Column(controls=[
-            
+        content=
+        ft.Column(controls=[
             ft.Row(controls=[
                 ft.Container(
                     
@@ -59,12 +62,12 @@ def main(page: ft.Page):
                     ft.Text('Кросовки детские "Звёздочка экокожа". Производитель: OOO Малыш-Спорт, г.Смоленск'),
                     ft.Container(
                         width=600,
-                        padding=5, margin=15, border_radius=16,
+                        padding=20, border_radius=16,
                         bgcolor=ft.Colors.BLACK_12,
                         content =ft.Column(controls=[
                             ft.Text("СОСТАВ", color=ft.Colors.BLACK, weight=ft.FontWeight.BOLD),
                             ft.Text("Верх - экокожа(полуретан на хлопковой основе),подкладка - хлопок 100%,подошва - ПВХ", color=ft.Colors.BLACK)
-                        ])
+                        ],)
                     )
 #            )
                 ]),
@@ -78,13 +81,23 @@ def main(page: ft.Page):
             
                 width=200,
                 height=200,
-                alignment=ft.Alignment.CENTER
+                alignment=ft.Alignment.CENTER,
+                border=ft.Border(left=ft.BorderSide(1, ft.BorderStyle.SOLID, "#000000"))
             ),
 
             ]),
 
         ])
-    ))
+    )
+
+    full_container = ft.Column(
+        controls=[
+            heading,
+            card
+        ]
+    )
+
+    page.add(full_container)
 
 '''
 import flet as ft
