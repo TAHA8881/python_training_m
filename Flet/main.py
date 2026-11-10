@@ -26,11 +26,14 @@ def main(page: ft.Page):
 #            ]),
 #        )
 
+
+
         content=ft.Column(controls=[
             
             ft.Row(controls=[
                 ft.Container(
-                    content=ft.Icon(ft.Icons.IMAGE, size=200),
+                    
+                    content=ft.Image(src='shoe.jpg'),
                     width=200,
                     
                 ),
