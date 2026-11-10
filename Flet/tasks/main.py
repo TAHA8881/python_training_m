@@ -9,6 +9,10 @@ def main(page: ft.Page):
         width=1200,
         padding=20, margin=10, border_radius=16,
         bgcolor=ft.Colors.WHITE,
+        shadow = ft.BoxShadow(
+            blur_radius = 15,
+            color= ft.Colors.BLACK_12
+        ),
 
 #        tags=ft.Container(
 #            padding=20, margin=10, border_radius=16,
@@ -26,21 +30,40 @@ def main(page: ft.Page):
             
             ft.Row(controls=[
                 ft.Container(
-                    content=ft.Icon(ft.Icons.PERSON),
+                    content=ft.Icon(ft.Icons.IMAGE, size=200),
                     width=200,
                     
                 ),
                 
             
                 ft.Column(controls=[
-                    ft.Container(
-                        width=50,
-                        padding=20, margin=10, border_radius=16,
-                        bgcolor=ft.Colors.BLUE,
-                    ),
+                    ft.Row(controls=[
+                        ft.Container(
+                            width=110,
+                            padding=7, margin=15, border_radius=16,
+                            bgcolor=ft.Colors.LIGHT_BLUE_50,
+                            content = ft.Text("Детская обувь", color=ft.Colors.BLUE)
+                        ),
+                        ft.Container(
+                            width=80,
+                            padding=5, margin=15, border_radius=16,
+                            bgcolor=ft.Colors.BLACK_12,
+                            content = ft.Text("Кросовки", color=ft.Colors.BLACK)
+                        )
+                    ]),    
                     ft.Text('Кросовки детские "Звёздочка" экокожа', size=22, weight=ft.FontWeight.BOLD),
                     ft.Text("Производитель: Малыш-Спорт"),
-                    ft.Text('Кросовки детские "Звёздочка экокожа". Производитель: OOO Малыш-Спорт, г.Смоленск')
+                    ft.Text('Кросовки детские "Звёздочка экокожа". Производитель: OOO Малыш-Спорт, г.Смоленск'),
+                    ft.Container(
+                        width=600,
+                        padding=5, margin=15, border_radius=16,
+                        bgcolor=ft.Colors.BLACK_12,
+                        content =ft.Column(controls=[
+                            ft.Text("СОСТАВ", color=ft.Colors.BLACK, weight=ft.FontWeight.BOLD),
+                            ft.Text("Верх - экокожа(полуретан на хлопковой основе),подкладка - хлопок 100%,подошва - ПВХ", color=ft.Colors.BLACK)
+                        ])
+                    )
+#            )
                 ]),
             ft.Container(
                 content= ft.Column(controls=[
@@ -49,10 +72,12 @@ def main(page: ft.Page):
             ], alignment=ft.MainAxisAlignment.CENTER,
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER
             ),
+            
                 width=200,
                 height=200,
                 alignment=ft.Alignment.CENTER
-            )
+            ),
+
             ]),
 
         ])
