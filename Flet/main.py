@@ -33,7 +33,7 @@ def main(page: ft.Page):
             ft.Row(controls=[
                 ft.Container(
                     
-                    content=ft.Image(src='shoe.jpg'),
+                    content=ft.Image(src='shoe.jpg', error_content= ft.Icon(ft.Icons.IMAGE, size=200)),
                     width=200,
                     
                 ),
