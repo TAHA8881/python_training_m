@@ -18,8 +18,9 @@ def main(page: ft.Page):
     cards = []
     for name, count in METRICS:
         cards.append(ft.Container(
-            col={ft.ResponsiveRowBreakpoint.XS: 12},
-            padding=18,
+            col={ft.ResponsiveRowBreakpoint.XS: 12,
+                ft.ResponsiveRowBreakpoint.MD: 6},
+            padding=18, bgcolor=ft.Colors.BLUE_50,
             content=ft.Text(f"{name}: {count}"),
         ))
     page.add(ft.ResponsiveRow(controls=cards, spacing=12, run_spacing=12))
