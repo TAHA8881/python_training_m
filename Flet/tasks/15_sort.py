@@ -59,29 +59,3 @@ def main(page: ft.Page):
 
 if __name__ == "__main__":
     ft.run(main)
-
-'''
-    def render(_):
-        nonlocal selected_id
-        key = order.value
-        rev = reverse.value
-
-        # Сортируем список для отображения
-        ordered = sorted(GAMES, key=lambda g: g[key], reverse=rev)
-
-        cards.controls.clear()
-        for g in ordered:
-            # Кнопка сразу запоминает id конкретной игры
-            btn = ft.Button(
-                "Выбрать",
-                on_click=lambda e, gid=g["id"]: set_selected(gid)
-            )
-            cards.controls.append(ft.Row([ft.Text(f"{g['name']} — {g['rating']}"), btn]))
-
-        if selected_id is None:
-            result.value = "Ничего не выбрано"
-        else:
-            game = next(g for g in GAMES if g["id"] == selected_id)
-            result.value = f"Выбрана игра: id {game['id']} — {game['name']}"
-        page.update()
-'''

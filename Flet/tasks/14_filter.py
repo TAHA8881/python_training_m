@@ -48,12 +48,3 @@ def main(page: ft.Page):
 
 if __name__ == "__main__":
     ft.run(main)
-
-'''
-q = search.value.lower()
-        filtered = [c for c in COURSES if q in c["name"].lower()]
-        if only_easy.value:
-            filtered = [c for c in filtered if c["level"] == "Начальный"]
-        cards.controls = [ft.Text(c["name"]) for c in filtered] or [ft.Text("Совпадений нет")]
-
-'''
