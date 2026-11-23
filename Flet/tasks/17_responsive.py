@@ -10,18 +10,23 @@
 '''
 import flet as ft
 
-METRICS = [("Студенты", 128), ("Группы", 8), ("Курсы", 14), ("Тесты", 32)]
+METRICS = [(ft.Icons.MAN,"Студенты", 128), (ft.Icons.PEOPLE, "Группы", 8), (ft.Icons.BOOK_ONLINE_OUTLINED, "Курсы", 14), (ft.Icons.CHECK_BOX ,"Тесты", 32)]
 
 
 def main(page: ft.Page):
     page.title = "Показатели"
     cards = []
-    for name, count in METRICS:
+    for icon, name, count in METRICS:
         cards.append(ft.Container(
             col={ft.ResponsiveRowBreakpoint.XS: 12,
                 ft.ResponsiveRowBreakpoint.MD: 6},
             padding=18, bgcolor=ft.Colors.BLUE_50,
-            content=ft.Text(f"{name}: {count}"),
+            content=ft.Row(
+                controls=[
+                    ft.Icon(icon),
+                    ft.Text(f"{name}: {count}"),
+                ]
+            ),
         ))
     page.add(ft.ResponsiveRow(controls=cards, spacing=12, run_spacing=12))
     # TODO: breakpoint MD и LG, оформление и иконки.
